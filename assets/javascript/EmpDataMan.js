@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     database = firebase.database();
 
-    $().on('click', '', function() {
+    $(SUBMIT).on('click', '', function() {
         
     });
 
