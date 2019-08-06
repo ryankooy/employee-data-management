@@ -15,10 +15,36 @@ $(document).ready(function() {
     database = firebase.database();
 
     $(SUBMIT).on('click', '', function() {
+
+        
+    event.preventDefault()
+
+    var nameStart = $("#name").val().trim()
+    var roleStart = $("#role").val().trim()
+    var dateStart = $("#startDate").val().trim()
+    var monthlyPayStart = $("#monthly").val().trim()
+
+    console.log(nameStart, roleStart, dateStart, monthlyPayStart)
+
+    var monthsPaid = moment(dateStart).diff(moment(), "month")
+
+    var totalBilled = monthsPaid * monthlyPayStart
+
+    console.log(totalBilled)
         
     });
 
 });
+
+
+
+
+
+
+
+
+
+
 
 // <!-- The core Firebase JS SDK is always required and must be listed first -->
 // <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
