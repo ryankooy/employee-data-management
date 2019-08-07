@@ -14,15 +14,20 @@ $(document).ready(function() {
 
     database = firebase.database();
 
+    var nameStart = ""
+    var roleStart = ""
+    var dateStart = ""
+    var monthlyPayStart = ""
+
     $(SUBMIT).on('click', '', function() {
 
         
     event.preventDefault()
 
-    var nameStart = $("#name").val().trim()
-    var roleStart = $("#role").val().trim()
-    var dateStart = $("#startDate").val().trim()
-    var monthlyPayStart = $("#monthly").val().trim()
+    nameStart = $("#employee-name").val().trim()
+    roleStart = $("#role").val().trim()
+    dateStart = $("#start-date").val().trim()
+    monthlyPayStart = $("#monthly-rate").val().trim()
 
     console.log(nameStart, roleStart, dateStart, monthlyPayStart)
 
