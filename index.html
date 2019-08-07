@@ -15,14 +15,27 @@
   </div>
 <main class="container1">
   <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Employee Details</h5>
     <p class="card-text">
-        <table id="option-1">
-            </table>
-
-
+        <table class="table" id="option-1">
+        
+ <thead class="thead-light">
+   <tr>
+      <th id="employee_name" scope="col">Employee Name</th>
+      <th id="role" scope="col">Role</th>
+      <th id="start_date" scope="col">Start Date</th>
+      <th id="months_worked" scope="col">Months Worked</th>
+      <th id="monthly_rate" scope="col">Monthly Rate ($)</th>
+      <th id="total_billed" cope="col">Total Billed ($)</th>
+    </tr>
+ </thead>
+ <tbody>
+     
+   
+ </tbody>
+</table>
+            
     </p>
     
   </div>
@@ -30,11 +43,34 @@
 
 
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
+    <div class="card-body">
     <h5 class="card-title">Add Employee</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p class="card-text">
+      <form>
+  
+  <div class="form-group">
+    <label for="employee-name">Employee Name</label>
+    <input type="text" class="form-control" id="employee-name" \>
+  </div>
+
+  <div class="form-group">
+    <label for="role">Role</label>
+    <input type="text" class="form-control" id="role" \>
+  </div>
+
+  <div class="form-group">
+    <label for="start-date">Start Date (MM/DD/YYYY)</label>
+    <input type="text" class="form-control" id="employee-name" \>
+  </div>
+  
+<div class="form-group">
+    <label for="monthly-rate">Monthly Rate</label>
+    <input type="text" class="form-control" id="monthly-rate" \>
+  </div>
+
+
+
+</form>
   </div>
 </div>
 </main>
