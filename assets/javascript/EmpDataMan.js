@@ -14,26 +14,49 @@ $(document).ready(function() {
 
     database = firebase.database();
 
-    $(SUBMIT).on('click', '', function() {
+    $('.btn').on('click', function(event) {
 
-        
-    event.preventDefault()
+        event.preventDefault();
 
-    var nameStart = $("#name").val().trim()
-    var roleStart = $("#role").val().trim()
-    var dateStart = $("#startDate").val().trim()
-    var monthlyPayStart = $("#monthly").val().trim()
+        var nameStart = $("#name").val().trim();
+        var roleStart = $("#role").val().trim();
+        var dateStart = $("#startDate").val().trim();
+        var monthlyPayStart = $("#monthly").val().trim();
 
-    console.log(nameStart, roleStart, dateStart, monthlyPayStart)
+        console.log(nameStart, roleStart, dateStart, monthlyPayStart);
 
-    var monthsPaid = moment(dateStart).diff(moment(), "month")
+        var monthsPaid = moment(dateStart).diff(moment(), "month");
 
-    var totalBilled = monthsPaid * monthlyPayStart
+        var totalBilled = monthsPaid * monthlyPayStart;
 
-    console.log(totalBilled)
-        
+        console.log(totalBilled);
+
+        database.ref().push({
+
+            name: nameStart,
+            role: roleStart,
+            date: dateStart,
+            monthsWorked: monthsPaid,
+            pay: monthlyPayStart,
+            total: totalBilled
+
+        });
+
     });
 
+    database.ref().on('child_added', function(snapshot) {
+
+        var s = snapshot.val();
+
+        $('#employee_name').text(s.name);
+        $('#role').text(s.role);
+        $('#start_date').text(s.date);
+        $('#months_worked').text(s.monthsWorked);
+        $('#monthly_rate').text(s.pay);
+        $('#total_billed').text(s.total);
+
+    });
+        
 });
 
 
